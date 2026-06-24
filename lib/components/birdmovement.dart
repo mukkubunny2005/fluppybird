@@ -1,0 +1,1 @@
+enum Birdmovement {middle, up, down}
