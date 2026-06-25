@@ -7,7 +7,7 @@ import 'package:fluppybird/components/configuration.dart';
 import 'package:fluppybird/components/ground.dart';
 import 'package:fluppybird/components/pipe_group.dart';
 
-class FluppyBirdGame extends FlameGame with TapCallbacks {
+class FluppyBirdGame extends FlameGame with TapCallbacks, HasCollisionDetection {
   FluppyBirdGame();
 
   late Bird bird;
@@ -22,11 +22,15 @@ class FluppyBirdGame extends FlameGame with TapCallbacks {
 
     ]);
     interval.onTick = () => add(PipeGroup());
+    interval.start();
   }
 
-  void onTap() {
+  @override
+  void onTapDown(TapDownEvent event) {
+    super.onTapDown(event);
     bird.fly();
   }
+
   @override
   void update(double dt) {
     super.update(dt);
