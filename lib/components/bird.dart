@@ -11,7 +11,7 @@ class Bird extends SpriteGroupComponent<Birdmovement> with HasGameReference<Flup
         final birdUpFlap = await game.loadSprite(Assets.birdUpFlap);
         final birdDownFlap = await game.loadSprite(Assets.birdDownFlap);
         size = Vector2(50, 40);
-        position = Vector2(50, game.size.y);
+        position = Vector2(50, game.size.y / 2 - size.y / 2);
         current = Birdmovement.middle;
         sprites = {
             Birdmovement.middle : birdMidFlap, 
