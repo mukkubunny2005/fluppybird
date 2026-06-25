@@ -10,6 +10,6 @@ class Assets {
   static const birdDownFlap = 'bird_downflap.png';
 
   static const message = 'assets/images/message.png';
-  static const menu = 'assets/images/menu.jpj';
+  static const menu = 'assets/images/menu.jpg';
   static const gameOver = 'assets/images/gameover.png';
 }
