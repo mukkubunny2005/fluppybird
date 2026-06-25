@@ -21,6 +21,7 @@ class FluppyBirdGame extends FlameGame with TapCallbacks {
       PipeGroup(),
 
     ]);
+    bird.fly();
     interval.onTick = () => add(PipeGroup());
   }
 
