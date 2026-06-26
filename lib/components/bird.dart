@@ -43,9 +43,14 @@ class Bird extends SpriteGroupComponent<Birdmovement> with HasGameReference<Flup
         super.onCollisionStart(intersectionPoints, other);
         gameOver();
     }
+    void reset() {
+      position = Vector2(50, game.size.y / 2 - size.y / 2);
+    }
 
     void gameOver() {
-        game.pauseEngine();
+      game.overlays.add('gameOver');
+      game.pauseEngine();
+      game.isHit = true;
     }
 
     @override
