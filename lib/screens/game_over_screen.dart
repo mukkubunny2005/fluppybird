@@ -24,8 +24,9 @@ class GameOverScreen extends StatelessWidget {
     );
   }
   void onRestart() {
+    game.isHit = false;
     game.bird.reset();
-    game.overlays.remove('gameOver');
+    game.overlays.remove(GameOverScreen.id);
     game.resumeEngine();
   }
 }

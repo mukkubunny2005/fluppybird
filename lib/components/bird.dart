@@ -45,6 +45,9 @@ class Bird extends SpriteGroupComponent<Birdmovement> with HasGameReference<Flup
     }
     void reset() {
       position = Vector2(50, game.size.y / 2 - size.y / 2);
+      current = Birdmovement.middle;
+      angle = 0;
+      children.whereType<MoveByEffect>().forEach(remove);
     }
 
     void gameOver() {
